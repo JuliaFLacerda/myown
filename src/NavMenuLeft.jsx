@@ -1,7 +1,9 @@
 import { MenuLeftDiv } from "./components/MenuLeftDiv";
-
-
-
+import { ChatboxEllipsesOutline } from 'react-ionicons'
+import { EnterOutline } from 'react-ionicons'
+import { ConstructOutline } from 'react-ionicons'
+import { CloudOutline } from 'react-ionicons'
+import { CellularOutline } from 'react-ionicons'
 
 export function NavMenuLeft(){
 
@@ -17,9 +19,11 @@ export function NavMenuLeft(){
 
     return(
         <MenuLeftDiv>
-            <button>a</button>
-            <button>b</button>
-            <button>c</button>
+            <ChatboxEllipsesOutline color={'black'} title={"About me"} height="36px" width="36px"/>
+            <EnterOutline color={'black'}  title={"VM Migration"} height="36px" width="36px" />
+            <ConstructOutline color={'black'}  title={"Cloud system"} height="36px" width="36px" />
+            <CloudOutline color={'black'}  title={"Cloud system"} height="36px" width="36px" />
+            <CellularOutline color={'black'} title={"APIs"} height="36px" width="36px" />
         </MenuLeftDiv>
     )
 }

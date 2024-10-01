@@ -52,14 +52,41 @@ table {
 }
 
 main{
-     width: 30%;
-     height: 350px;
+     width: 50%;
+     height: 550px;
      border-radius: 12px;
-     background: gray;
+     background: white;
      display: flex;
      flex-direction: column;
+	 position: fixed;
+	 top: 10%;
+	 right: 10%;
+    align-items: flex-start;
   }
 
+  .draggable {
+  width: 150px;
+  height: 150px;
+  background-color: lightblue;
+  cursor: move;
+  display: flex;
+  justify-content: flex-start;
+  font-family: Arial, sans-serif;
+}
+
+section{
+  padding-left: 15px;
+}
+
+hr{
+   color: #e0e0e0;
+   width: 100%;
+  }
+
+header{
+background: #e0e0e0;}
 `
+
+
 
 export default GlobalStyle;
