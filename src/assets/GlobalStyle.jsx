@@ -76,6 +76,8 @@ main{
 
 section{
   padding-left: 15px;
+  scroll-behavior: auto;
+  overflow: scroll;
 }
 
 hr{
@@ -85,6 +87,7 @@ hr{
 
 header{
 background: #e0e0e0;}
+
 `
 
 
