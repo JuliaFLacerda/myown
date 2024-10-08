@@ -74,10 +74,53 @@ main{
   font-family: Arial, sans-serif;
 }
 
+
+.top-left-resize {
+    cursor: nw-resize; /* Diagonal resize cursor */
+}
+
+.top-resize {
+    cursor: n-resize; /* Vertical resize cursor */
+}
+
+.top-right-resize {
+    cursor: ne-resize; /* Diagonal resize cursor */
+}
+
+.left-resize {
+    cursor: w-resize; /* Horizontal resize cursor */
+}
+
+.right-resize {
+    cursor: e-resize; /* Horizontal resize cursor */
+}
+
+.bottom-left-resize {
+    cursor: sw-resize; /* Diagonal resize cursor */
+}
+
+.bottom-resize {
+    cursor: s-resize; /* Vertical resize cursor */
+}
+
+.bottom-right-resize {
+    cursor: se-resize; /* Diagonal resize cursor */
+}
+
+/* Additional styles for hover effect (optional) */
+.draggable:hover {
+    border-color: #888; /* Change border color on hover */
+}
+
+
 section{
   padding-left: 15px;
   scroll-behavior: auto;
   overflow: scroll;
+    cursor: default; /* Allow default cursor for the section */
+  padding-left: 15px;
+  scroll-behavior: auto;
+  width: 100%;
 }
 
 hr{
@@ -86,7 +129,15 @@ hr{
   }
 
 header{
-background: #e0e0e0;}
+background: #e0e0e0;
+z-index: 1000;
+position: fixed;
+top: 0;
+width: 100%;}
+
+.no-pointer-events {
+  pointer-events: none; /* Disable pointer events */
+}
 
 `
 
