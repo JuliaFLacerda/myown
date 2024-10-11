@@ -17,11 +17,13 @@ export function MainWindow(props) {
   const [isClosing, setIsClosing] = useState(false); // State to track the closing animation
 
   // Function to trigger the closing animation
-  const triggerClose = () => {
+  const triggerClose = (iconId) => {
     setIsClosing(true); // Start closing animation
     setTimeout(() => {
-      setClosed(true); // Unrender the component after animation
-    }, 300); // Match the timeout with the CSS animation duration
+      setIsClosing(false);
+      props.removeWindows(iconId) // Unrender the component after animation
+      console.log(props.windows)
+    }, 350); // Match the timeout with the CSS animation duration
   };
 
   const BORDER_SIZE = 10;
@@ -148,7 +150,7 @@ export function MainWindow(props) {
       height: fullScreen ? "100%" : `${size.height}px`,
       borderRadius: fullScreen ? "0" : "12px",
       background: "white",
-      display: closed ? "none" : "flex",
+      display: "flex",
       flexDirection: "column",
       zIndex: 2,
       marginTop: fullScreen ? "30px" : "0"
@@ -182,7 +184,7 @@ export function MainWindow(props) {
         closed={closed} 
         fullScreen={fullScreen} 
         setFullScreen={setFullScreen} 
-        triggerClose={triggerClose}
+        triggerClose={() => triggerClose(props.iconId)}
       />
       <hr />
         <section>

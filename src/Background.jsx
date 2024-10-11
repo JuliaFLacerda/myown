@@ -28,12 +28,22 @@ export function Background(){
     });
   };
 
+  const removeWindow = (iconId) => {
+  setWindows((prevWindows) => {
+    console.log('Before:', prevWindows);
+    const updatedWindows = prevWindows.filter((w) => w.iconId !== iconId);
+    console.log('After:', updatedWindows);
+    return updatedWindows;
+  });
+};
+
+
     return(
         <BackgroundDiv>
             <NavMenuLeft addWindow={addWindow}/>
             {
                 windows.map(
-                    (w) => <MainWindow content={w.content} />
+                    (w) => <MainWindow content={w.content} iconId={w.iconId} removeWindows={removeWindow} windows={windows} />
                 )
             }
         </BackgroundDiv>
