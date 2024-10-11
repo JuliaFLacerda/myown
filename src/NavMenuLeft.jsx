@@ -34,7 +34,7 @@ export function NavMenuLeft({ addWindow }){
             <ConstructOutline color={'black'}  title={"cloudinfra"} data-contentName="cloudinfra" height="36px" width="36px" onClick={() => handleIconClick('icon1')} />
             <ChatboxEllipsesOutline color={'black'} title={"aboutme"} height="36px" width="36px" onClick={() => handleIconClick('icon2')} />
             <EnterOutline color={'black'}  title={"VM Migration"} height="36px" width="36px" onClick={() => handleIconClick('icon3')}/>
-            <CloudOutline color={'black'}  title={"cloudinfra"} height="36px" width="36px" />
+            <CloudOutline color={'black'}  title={"cloudinfra"} height="36px" width="36px" onClick={() => handleIconClick('icon4')}/>
             <CellularOutline color={'black'} title={"APIs"} height="36px" width="36px"  />
         </MenuLeftDiv>
     )

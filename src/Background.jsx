@@ -3,6 +3,7 @@ import { useState } from "react";
 import { BackgroundDiv } from "./components/BackgroundDiv";
 import { MainWindow } from "./MainWindow";
 import { NavMenuLeft } from "./NavMenuLeft";
+import CloudInfrastructure from "./components/content/CloudInfrastructure";
 
 
 
@@ -11,12 +12,13 @@ export function Background(){
 
 
 
-  const [windows, setWindows] = useState([]);
+  const [windows, setWindows] = useState([{iconId: 4, content: <CloudInfrastructure />}]);
 
   const contentMap = {
     icon1: <div>This is content for Icon 1</div>,
     icon2: <div>This is content for Icon 2</div>,
-    icon3: <div>This is content for Icon 3</div>
+    icon3: <div>This is content for Icon 3</div>,
+    icon4: <CloudInfrastructure />
   };
 
   const addWindow = (iconId) => {

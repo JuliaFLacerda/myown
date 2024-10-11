@@ -152,7 +152,7 @@ export function MainWindow(props) {
       background: "white",
       display: "flex",
       flexDirection: "column",
-      zIndex: 2,
+      zIndex: fullScreen? 1000 : 2,
       marginTop: fullScreen ? "30px" : "0"
     }}
   >
