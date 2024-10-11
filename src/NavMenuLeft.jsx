@@ -1,11 +1,13 @@
+import { useContext, useState } from "react";
 import { MenuLeftDiv } from "./components/MenuLeftDiv";
 import { ChatboxEllipsesOutline } from 'react-ionicons'
 import { EnterOutline } from 'react-ionicons'
 import { ConstructOutline } from 'react-ionicons'
 import { CloudOutline } from 'react-ionicons'
 import { CellularOutline } from 'react-ionicons'
+import ContentContext from "./context/ContentContext";
 
-export function NavMenuLeft(){
+export function NavMenuLeft({ addWindow }){
 
     const icons = ["1", "2"];
     /*
@@ -16,14 +18,24 @@ export function NavMenuLeft(){
     <ion-icon name="cellular-outline"></ion-icon> api com java
 
     */
+   const { content, setContent } = useContext(ContentContext);
+
+   function handleClick(e){
+    setContent(<div></div>)
+   }
+
+   const handleIconClick = (iconId) => {
+    addWindow(iconId);
+  };
+
 
     return(
         <MenuLeftDiv>
-            <ChatboxEllipsesOutline color={'black'} title={"About me"} height="36px" width="36px"/>
-            <EnterOutline color={'black'}  title={"VM Migration"} height="36px" width="36px" />
-            <ConstructOutline color={'black'}  title={"Cloud system"} height="36px" width="36px" />
-            <CloudOutline color={'black'}  title={"Cloud system"} height="36px" width="36px" />
-            <CellularOutline color={'black'} title={"APIs"} height="36px" width="36px" />
+            <ConstructOutline color={'black'}  title={"cloudinfra"} data-contentName="cloudinfra" height="36px" width="36px" onClick={() => handleIconClick('icon1')} />
+            <ChatboxEllipsesOutline color={'black'} title={"aboutme"} height="36px" width="36px" onClick={() => handleIconClick('icon2')} />
+            <EnterOutline color={'black'}  title={"VM Migration"} height="36px" width="36px" onClick={() => handleIconClick('icon3')}/>
+            <CloudOutline color={'black'}  title={"cloudinfra"} height="36px" width="36px" />
+            <CellularOutline color={'black'} title={"APIs"} height="36px" width="36px"  />
         </MenuLeftDiv>
     )
 }

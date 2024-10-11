@@ -44,8 +44,8 @@ const Terminal = ({ setShowTerminal }) => {
       const [commandIndex, setCommandIndex] = useState(0);
       const [displayedOutput, setDisplayedOutput] = useState("");
     
-      const totalTime = 1700; // Total time in milliseconds for the simulation (3 seconds)
-      const commandDelay = totalTime / commands.length; // Time per command (in ms)
+      const totalTime = 1700;
+      const commandDelay = totalTime / commands.length;
     
       useEffect(() => {
         if (commandIndex < commands.length) {

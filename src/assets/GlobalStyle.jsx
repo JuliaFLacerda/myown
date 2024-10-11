@@ -138,7 +138,14 @@ width: 100%;}
 .no-pointer-events {
   pointer-events: none; /* Disable pointer events */
 }
+.main-window {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
 
+.main-window.closing {
+  opacity: 0;
+  transform: scale(0.9); /* Shrink and fade out */
+}
 `
 
 
