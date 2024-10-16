@@ -5,12 +5,12 @@ import { CloseCircleOutline } from 'react-ionicons'
 
 export function MainWindowOptions(props) {
   function handleDoubleClick() {
-    props.setFullScreen(!props.fullScreen); // Toggle fullscreen mode
+    props.setFullScreen(!props.fullScreen); 
   }
 
-  // Trigger the closing animation and actual close
+  
   function handleCloseClick() {
-    props.triggerClose(); // Calls the parent method to close the main window
+    props.triggerClose(); 
   }
 
   return (
@@ -22,7 +22,7 @@ export function MainWindowOptions(props) {
         title={"Close"}
         height="25px"
         width="25px"
-        onClick={handleCloseClick} // Handle close action
+        onClick={handleCloseClick} 
       />
     </MainWindowOptionDiv>
   );

@@ -14,16 +14,16 @@ export function MainWindow(props) {
   const [fullScreen, setFullScreen] = useState(false);
   const { content, setContent } = useContext(ContentContext);
 
-  const [isClosing, setIsClosing] = useState(false); // State to track the closing animation
+  const [isClosing, setIsClosing] = useState(false); 
 
-  // Function to trigger the closing animation
+ 
   const triggerClose = (iconId) => {
-    setIsClosing(true); // Start closing animation
+    setIsClosing(true); 
     setTimeout(() => {
       setIsClosing(false);
-      props.removeWindows(iconId) // Unrender the component after animation
+      props.removeWindows(iconId) 
       console.log(props.windows)
-    }, 350); // Match the timeout with the CSS animation duration
+    }, 350); 
   };
 
   const BORDER_SIZE = 10;
@@ -133,7 +133,7 @@ export function MainWindow(props) {
   }, [isDragging, isResizing, props.contentName]);
 
   const handleDoubleClick = () => {
-    setFullScreen((prevFullScreen) => !prevFullScreen); // Toggle fullscreen
+    setFullScreen((prevFullScreen) => !prevFullScreen); 
   };
 
   return (
@@ -156,7 +156,6 @@ export function MainWindow(props) {
       marginTop: fullScreen ? "30px" : "0"
     }}
   >
-      {/* Resize handles */}
       {['top-left', 'top-right', 'bottom-left', 'bottom-right', 'top', 'left', 'right', 'bottom'].map(dir => (
         <div
           key={dir}

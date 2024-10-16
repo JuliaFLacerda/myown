@@ -56,7 +56,7 @@ const Terminal = ({ setShowTerminal }) => {
           return () => clearTimeout(timeout);
         } else {
           setTimeout(() => {
-            setShowTerminal(false); // Unmount Terminal after all commands
+            setShowTerminal(false); 
           }, commandDelay);
         }
       }, [commandIndex, commandDelay, commands, setShowTerminal]);

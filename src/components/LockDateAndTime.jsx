@@ -15,7 +15,6 @@ export function LockDateAndTime(){
       return () => clearInterval(intervalId);
     }, []);
   
-    // Format hours and minutes only
     const formattedTime = time.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
 
     const formattedDate = time.toLocaleDateString([], {

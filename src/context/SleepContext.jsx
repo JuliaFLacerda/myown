@@ -1,27 +1,27 @@
 import React, { useState, useEffect, createContext, useContext } from "react";
 
-// Create SleepContext
+
 const SleepContext = createContext();
 
-// SleepProvider component
+
 export const SleepProvider = ({ children }) => {
   const [isSleeping, setIsSleeping] = useState(false);
 
-  // Function to enter sleep mode
+ 
   const enterSleepMode = () => {
     setIsSleeping(true);
   };
 
-  // Function to wake up from sleep mode
+ 
   const wakeUp = () => {
     setIsSleeping(false);
   };
 
-  // Listen for user activity (mousemove, keydown, or click) to wake up
+  
   useEffect(() => {
     if (isSleeping) {
       const handleWakeUp = () => {
-        wakeUp(); // Exit sleep mode on any user activity
+        wakeUp(); 
       };
 
       document.addEventListener("mousemove", handleWakeUp);
@@ -40,7 +40,7 @@ export const SleepProvider = ({ children }) => {
     <SleepContext.Provider value={{ isSleeping, enterSleepMode }}>
       {children}
 
-      {/* Black overlay when in sleep mode */}
+     
       {isSleeping && (
         <div
           style={{
@@ -65,7 +65,7 @@ export const SleepProvider = ({ children }) => {
   );
 };
 
-// Custom hook for using SleepContext
+
 export const useSleep = () => {
   return useContext(SleepContext);
 };
